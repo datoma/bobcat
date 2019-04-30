@@ -7,7 +7,7 @@ node('master') {
     
     stage('Run tests') {
         try {
-            withMaven(maven: 'Maven 3', mavenSettingsConfig: 'MyGlobalSettings') {
+            withMaven(maven: 'Maven 3.3.3', mavenSettingsConfig: 'bc30ebe0-68e1-4fa7-ab30-38092113a63c') {
                 dir('bobcat') {
                     sh 'mvn clean test -Dwebdriver.type=remote -Dwebdriver.url=http://seleniumhub:4444/wd/hub -Dwebdriver.cap.browserName=chrome -Dmaven.test.failure.ignore=true'
                 }
